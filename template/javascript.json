@@ -1,0 +1,59 @@
+{
+    "for": {
+        "head": "for( $1; $2 ;$3 ){",
+        "tail": "}"
+    },
+    "forin": {
+        "head": "for( $1 in $2 ){",
+        "tail": "}"
+    },
+    "while": {
+        "head": "while( $1 ){",
+        "tail": "}"
+    },
+    "if": {
+        "head": "if( $1 ){",
+        "tail": "}"
+    },
+    "else": {
+        "head": "else( $1 ){",
+        "tail": "}"
+    },
+    "elseif": {
+        "head": "elseif( $1 ){",
+        "tail": "}"
+    },
+    "switch": {
+        "head": "switch( $1 ){",
+        "entry": "case: $1 ;\nbreak;",
+        "tail": "}"
+    },
+    "function": {
+        "head": "function $1( $2 ){",
+        "tail": "}"
+    },
+    "class": {
+        "head": "class $1 {",
+        "tail": "}"
+    },
+    "method": {
+        "head": "$1 ($2){",
+        "tail": "}"
+    },
+    "try": {
+        "head": "try{",
+        "tail": "}"
+    },
+    "catch": {
+        "head": "catch( $1 ){",
+        "tail": "}"
+    },
+    "finally": {
+        "head": "finally{",
+        "tail": "}"
+    },
+    "delimiter": {
+        "head": "{",
+        "tail": "}"
+    }
+}
