@@ -34,11 +34,13 @@
     },
     "class": {
         "head": "class $1 {",
-        "tail": "}"
+        "tail": "}",
+        "instance": "new $1($2)"
     },
     "method": {
         "head": "$1 ($2){",
-        "tail": "}"
+        "tail": "}",
+        "call":"$1.$2"
     },
     "try": {
         "head": "try{",
@@ -54,7 +56,8 @@
     },
     "delimiter": {
         "head": "{",
-        "tail": "}"
+        "tail": "}",
+        "EOL": ";"
     },
     "file": {
         "head": "",
@@ -64,6 +67,11 @@
     },
     "variable": {
         "suffix": "",
-        "preffix": ""
-    }
+        "preffix": "",
+        "declare": "var $1",
+        "assign": " = "
+    },
+    "system": {
+        "print": "console.log($1)"
+    },"return": "return"
 }

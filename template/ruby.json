@@ -34,11 +34,13 @@
     },
     "class": {
         "head": "class $1 \n",
-        "tail": "end"
+        "tail": "end",
+        "instance":"$1.new"
     },
     "method": {
         "head": "def $1 $2",
-        "tail": "end"
+        "tail": "end",
+        "call": "$1.$2"
     },
     "try": {
         "head": "",
@@ -54,7 +56,8 @@
     },
     "delimiter": {
         "head": "",
-        "tail": "end"
+        "tail": "end\n",
+        "EOL": "\n"
     },
     "file": {
         "head": "",
@@ -64,6 +67,10 @@
     },
     "variable": {
         "suffix": "",
-        "preffix": ""
-    }
+        "preffix": "",
+        "declare": "$1",
+        "assign": "="
+    },"system":{
+      "print":"puts $1"
+    },"return": "return"
 }

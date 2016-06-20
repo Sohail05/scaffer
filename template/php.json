@@ -35,12 +35,12 @@
     "class": {
         "head": "class $1 {",
         "tail": "}",
-        "instance": "new $1()",
-        "call": "$1->$2"
+        "instance": "new $1()"
     },
     "method": {
         "head": "function $1 ($2){",
-        "tail": "}"
+        "tail": "}",
+        "call": "$1->$2"
     },
     "try": {
         "head": "try{",
@@ -56,89 +56,29 @@
     },
     "delimiter": {
         "head": "{",
-        {
-            "for": {
-                "head": "for( $1; $2 ;$3 ){",
-                "tail": "}"
-            },
-            "foreach": {
-                "head": "foreach( $1 as $2 ){",
-                "tail": "}"
-            },
-            "while": {
-                "head": "while( $1 ){",
-                "tail": "}"
-            },
-            "if": {
-                "head": "if( $1 ){",
-                "tail": "}"
-            },
-            "else": {
-                "head": "else( $1 ){",
-                "tail": "}"
-            },
-            "elseif": {
-                "head": "elseif( $1 ){",
-                "tail": "}"
-            },
-            "switch": {
-                "head": "switch( $1 ){",
-                "entry": "case: $1 ;\nbreak;",
-                "tail": "}"
-            },
-            "function": {
-                "head": "function $1( $2 )\n{",
-                "tail": "}"
-            },
-            "class": {
-                "head": "class $1 {",
-                "tail": "}",
-                "instance": "new $1()",
-                "call": "$1->$2"
-            },
-            "method": {
-                "head": "function $1 ($2){",
-                "tail": "}"
-            },
-            "try": {
-                "head": "try{",
-                "tail": "}"
-            },
-            "catch": {
-                "head": "catch( $1 ){",
-                "tail": "}"
-            },
-            "finally": {
-                "head": "finally{",
-                "tail": "}"
-            },
-            "delimiter": {
-                "head": "{",
-                "tail": "}"
-            },
-            "file": {
-                "head": "<?php",
-                "tail": "?>",
-                "ext": "php",
-                "lang": "php"
-            },
-            "variable": {
-                "suffix": "",
-                "preffix": "$",
-                "declare": ""
-            },
-            "file": {
-                "head": "<?php",
-                "tail": "?>",
-                "ext": "php",
-                "lang": "php"
-            },
-            "variable": {
-                "suffix": "",
-                "preffix": "$",
-                "declare": ""
-            },
-            "system": {
-                "print": "echo $1"
-            }
-        }
+        "tail": "}",
+        "EOL": ";"
+    },
+    "file": {
+        "head": "<?php",
+        "tail": "?>",
+        "ext": "php",
+        "lang": "php"
+    },
+    "variable": {
+        "suffix": "",
+        "preffix": "$",
+        "declare": "$1",
+        "assign": " = "
+    },
+    "file": {
+        "head": "<?php",
+        "tail": "?>",
+        "ext": "php",
+        "lang": "php"
+    },
+    "system": {
+        "print": "echo $1"
+    },
+    "return": "return"
+}
