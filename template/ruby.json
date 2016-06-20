@@ -3,9 +3,9 @@
         "head": "for $1 do",
         "tail": "end"
     },
-    "forin": {
-        "head": "for( $1 in $2 ){",
-        "tail": "}"
+    "foreach": {
+        "head": "",
+        "tail": ""
     },
     "while": {
         "head": "while $1 do",
@@ -16,12 +16,12 @@
         "tail": "end"
     },
     "else": {
-        "head": "else( $1 ){",
-        "tail": "}"
+        "head": "else",
+        "tail": "end"
     },
     "elseif": {
-        "head": "elseif( $1 ){",
-        "tail": "}"
+        "head": "elseif $1 ",
+        "tail": "end"
     },
     "switch": {
         "head": "case $1",
@@ -41,19 +41,29 @@
         "tail": "end"
     },
     "try": {
-        "head": "try{",
-        "tail": "}"
+        "head": "",
+        "tail": ""
     },
     "catch": {
-        "head": "catch( $1 ){",
-        "tail": "}"
+        "head": "",
+        "tail": ""
     },
     "finally": {
-        "head": "finally{",
-        "tail": "}"
+        "head": "",
+        "tail": ""
     },
     "delimiter": {
         "head": "",
         "tail": "end"
+    },
+    "file": {
+        "head": "",
+        "tail": "",
+        "ext": "rb",
+        "lang": "ruby"
+    },
+    "variable": {
+        "suffix": "",
+        "preffix": ""
     }
 }

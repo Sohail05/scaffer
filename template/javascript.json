@@ -3,7 +3,7 @@
         "head": "for( $1; $2 ;$3 ){",
         "tail": "}"
     },
-    "forin": {
+    "foreach": {
         "head": "for( $1 in $2 ){",
         "tail": "}"
     },
@@ -55,5 +55,15 @@
     "delimiter": {
         "head": "{",
         "tail": "}"
+    },
+    "file": {
+        "head": "",
+        "tail": "",
+        "ext": "js",
+        "lang": "javascript"
+    },
+    "variable": {
+        "suffix": "",
+        "preffix": ""
     }
 }
