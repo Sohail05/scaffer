@@ -3,46 +3,67 @@ module.exports = class scaffer {
     constructor(template) {
         this.template = template;
         this.order = [];
+        this.depth = 0;
         this.container = "";
     }
 
+    getDepth(){
+      return this.depth;
+    }
+
+    indent(){
+      if(this.template.indent){
+        return this.template.indent.repeat(this.getDepth());
+      }else{
+        return "";
+      }
+    }
+
     for () {
-        this.container += this.template.for.head;
+        this.container += this.indent() + this.template.for.head;
+        this.depth++;
         return this;
     }
 
     if () {
-        this.container += this.template.if.head;
+        this.container += this.indent() + this.template.if.head;
+        this.depth++;
         return this;
     }
 
     end() {
-        this.container += this.template.delimiter.tail + "\n";
+        this.container += this.indent() + this.template.delimiter.tail + "\n";
+        this.depth--;
         return this;
     }
 
     else() {
         this.container += this.template.else.head;
+        this.depth++;
         return this;
     }
 
     elseif() {
-        this.container += this.template.elseif.head;
+        this.container +=  this.indent() + this.template.elseif.head;
+        this.depth++;
         return this;
     }
 
     switch () {
-        this.container += this.template.switch.head + this.template.switch.tail;
+        this.container += this.indent() + this.template.switch.head + this.indent() + this.template.switch.tail;
+        //this.depth++;
         return this;
     }
 
     class(name = "$1") {
-        this.container += this.template.class.head.replace("$1", name);
+        this.container += this.indent() + this.template.class.head.replace("$1", name)+"\n" ;
+        this.depth++;
         return this;
     }
 
     function(name = "$1", params = "$2") {
         this.container += this.template.function.head.replace("$1", name).replace("$2", params) +"\n";
+        this.depth++;
         return this;
     }
 
@@ -54,7 +75,8 @@ module.exports = class scaffer {
         if (Array.isArray(params)) {
             params = params.map((value) => {return this.variablePadding(this.template, value);} ).join(", ");
         }
-        this.container += this.template.method.head.replace("$1", name).replace("$2", params)+"\n";
+        this.container +=  this.indent() + this.template.method.head.replace("$1", name).replace("$2", params)+"\n";
+        this.depth++;
         return this;
     }
 
@@ -87,6 +109,7 @@ module.exports = class scaffer {
     }
     callMethod(name = "$1", method = "$2") {
         this.container += this.template.method.call.replace("$1", this.variablePadding(this.template, name)).replace("$2", method);
+        this.depth++;
         return this;
     }
     variablePadding(template, value) {
@@ -99,7 +122,8 @@ module.exports = class scaffer {
     }
 
     return(){
-      this.container += this.template.return + " ";
+      this.container +=  this.indent() + this.template.return + " ";
+      this.depth--;
       return this;
     }
 

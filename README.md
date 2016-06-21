@@ -14,6 +14,14 @@ WIP
 
 ## Tests
 
+## Todo
+
+* add Arithmetic and operations
+* validate json
+* create test case
+* implement all methods in example
+* create static methods
+
 ## Contributors
 
 ## License

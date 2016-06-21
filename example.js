@@ -10,7 +10,8 @@ var exec = require("child_process").exec;
 let langs = [
   {lang: "javascript", ext: "js", format:{function:beautify} },
   {lang: "php", ext: "php", format:{command:"php-cs-fixer fix --level=psr2"}} ,
-  {lang: "ruby", ext: "rb", format:{command:"rubocop --auto-correct"}}
+  {lang: "ruby", ext: "rb", format:{command:"rubocop --auto-correct"}},
+  {lang: "python", ext: "py", format:{}}
 ];
 
 langs.forEach((lang) => {
